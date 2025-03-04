@@ -27,11 +27,9 @@ const Navbar = () => {
         
         <div className="flex gap-4">
         {auth ? (
-            // If authenticated, show Profile & Logout button
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
-                  {/* Placeholder avatar (You can replace this with an actual profile picture) */}
                   <span className="text-gray-700 font-bold">A</span>
                 </div>
                 <span className="font-semibold text-gray-700">Ahmed</span>
@@ -46,7 +44,6 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            // If not authenticated, show Login & Sign Up buttons
             <div className="flex gap-4">
               <button
                 onClick={() => navigate("/login")}

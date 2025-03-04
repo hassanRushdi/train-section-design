@@ -24,7 +24,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      {/* Card Positioned Over Banner */}
       <div className="lg:absolute lg:right-16 z-10 sm:flex sm:justify-center sm:mt-10 bottom-2">
         <CourseCard />
       </div>

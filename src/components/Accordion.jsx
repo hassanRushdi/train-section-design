@@ -18,7 +18,6 @@ const Accordion = ({ chapterTitle }) => {
 
   return (
     <div className="w-full max-w-2xl mx-auto">
-      {/* Chapter Header */}
       <button
         className="w-full flex justify-between items-center bg-primary text-white px-4 py-5 mt-10 text-left font-normal rounded-lg"
         onClick={toggleChapter}
@@ -31,7 +30,6 @@ const Accordion = ({ chapterTitle }) => {
         />
       </button>
 
-      {/* Chapter Content */}
       {openChapter && (
         <div className="p-4">
           <div className="w-full flex justify-between items-center text-gray-700 px-4 py-2 text-left rounded-md">
@@ -40,7 +38,6 @@ const Accordion = ({ chapterTitle }) => {
               80%
             </span>
           </div>
-          {/* Module 1 */}
           <button
             className={`w-full flex justify-between items-center text-gray-700 px-4 py-2 text-left font-semibold ${
               openModules["module1"] && "text-yellow-400" 
@@ -61,7 +58,6 @@ const Accordion = ({ chapterTitle }) => {
             </div>
           )}
 
-          {/* Module 2 */}
           <button
             className={`w-full flex justify-between items-center text-gray-700 px-4 py-2 text-left font-semibold ${
               openModules["module2"] && "text-yellow-400" 
@@ -78,7 +74,6 @@ const Accordion = ({ chapterTitle }) => {
             />
           </button>
 
-          {/* Module 3 */}
           <button
             className={`w-full flex justify-between items-center text-gray-700 px-4 py-2 text-left font-semibold ${
               openModules["module3"] && "text-yellow-400" 
@@ -111,7 +106,6 @@ const Accordion = ({ chapterTitle }) => {
             />
           </button>
 
-          {/* Post Test */}
           <button className="w-full flex justify-between items-center text-gray-700 px-4 py-2 text-left rounded-md">
             <span>Post test</span>
             <span className="ml-auto bg-green-200 text-green-800 px-2 py-1 rounded-md text-sm">
