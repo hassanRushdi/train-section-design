@@ -4,17 +4,20 @@ import Logo from "../assets/logo-2.png";
 import { useNavigate } from "react-router-dom";
 import { login } from "../utils/auth";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { ImSpinner2 } from "react-icons/im";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
+    setLoading(true);
 
     const result = await login(email, password);
 
@@ -23,17 +26,19 @@ const LoginPage = () => {
     } else {
       setError(result.message);
     }
+
+    setLoading(false);
   };
 
   return (
     <div>
       {/* Picture */}
-      <div className=" w-[80%] flex mx-auto mt-14 gap-20 justify-center">
+      <div className=" w-full flex gap-10 justify-center">
         {/* Picture section */}
-        <div>
+        <div className="w-1/2">
           {/* Picture itself */}
           <div
-            className="w-[400px] h-[560px] relative flex items-center px-4"
+            className="w-full h-screen relative flex items-center px-10"
             style={{
               backgroundImage: `url('${LoginPic}')`,
               backgroundSize: "cover",
@@ -43,10 +48,10 @@ const LoginPage = () => {
               className="absolute bottom-0 left-0 z-10 opacity-55 w-full h-full"
               style={{
                 background:
-                  "linear-gradient(to bottom, rgba(6, 49, 95, 0.82) 47%, rgba(255, 255, 255, 0.97)",
+                  "linear-gradient(to bottom, rgba(6, 49, 95, 0.82) 47%, rgba(255, 255, 255, 0.97) 100%)",
               }}
             ></div>
-            <p className="text-center font-bold">
+            <p className="text-center font-bold text-lg">
               At TRAIN, we bring learning to life by blending real-world
               expertise with academic knowledge. Our programs are led by
               industry professionals who share hands-on experience, ensuring a
@@ -56,13 +61,13 @@ const LoginPage = () => {
             <img
               src={Logo}
               alt="logo"
-              className="w-[140px] absolute bottom-0 left-0 z-[100]"
+              className="w-[230px] absolute bottom-0 left-0 z-[100]"
             />
           </div>
         </div>
         {/* Login form */}
-        <div className="flex items-center justify-center">
-          <div className="bg-white p-8 rounded-lg shadow-md w-[400px]">
+        <div className="w-1/2  items-center justify-center">
+          <div className="bg-white p-8 space-y-5">
             <h2 className="text-3xl font-bold text-black mb-2">
               Welcome to TRAIN!
             </h2>
@@ -108,9 +113,9 @@ const LoginPage = () => {
               <div className="flex justify-between items-center text-sm mb-4">
                 <label className="flex items-center">
                   <input type="checkbox" className="mr-2" required />I agree to
-                  the{" "}
+                  the{"  "}
                   <span className="text-primary font-medium cursor-pointer">
-                    Terms & Conditions
+                      Terms & Conditions
                   </span>
                 </label>
                 <span className="text-primary font-medium cursor-pointer">
@@ -121,9 +126,20 @@ const LoginPage = () => {
               {/* Login Button */}
               <button
                 type="submit"
-                className="w-full bg-primary text-white py-2 rounded-md text-lg font-medium hover:bg-blue-800 transition"
+                className="w-full bg-primary text-white py-2 rounded-md text-lg font-medium hover:bg-blue-800 transition mt-5 disabled:bg-gray-500 disabled:cursor-not-allowed"
+                disabled={loading}
               >
-                Log in
+                {" "}
+                {loading ? (
+                  <>
+                  <div className="flex justify-center items-center">
+                    <ImSpinner2 className="animate-spin mr-2" />
+                    Logging in...
+                  </div>
+                  </>
+                ) : (
+                  "Log in"
+                )}
               </button>
             </form>
           </div>
