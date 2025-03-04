@@ -31,7 +31,7 @@ const TabBar = () => {
           }`}
         >
           <span>{tab.name}</span>
-          <span className={activeTab === tab.name && "text-secondary"}>
+          <span className={activeTab === tab.name ? "text-secondary" : ''}>
             {tab.icon}
           </span>
         </button>

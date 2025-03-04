@@ -26,7 +26,7 @@ const Accordion = ({ chapterTitle }) => {
         {chapterTitle}
         <ChevronDown
           className={`w-5 h-5 transition-transform ${
-            openChapter ? "rotate-180" : ""
+            openChapter && "rotate-180" 
           }`}
         />
       </button>
@@ -43,14 +43,14 @@ const Accordion = ({ chapterTitle }) => {
           {/* Module 1 */}
           <button
             className={`w-full flex justify-between items-center text-gray-700 px-4 py-2 text-left font-semibold ${
-              openModules["module1"] ? "text-yellow-400" : ""
+              openModules["module1"] && "text-yellow-400" 
             } rounded-md`}
             onClick={() => toggleModule("module1")}
           >
             <span>Module 1: Export Readiness 6 hours</span>
             <ChevronRight
               className={`w-5 h-5 transition-transform ${
-                openModules["module1"] ? "rotate-90" : ""
+                openModules["module1"] && "rotate-90" 
               }`}
             />
           </button>
@@ -64,7 +64,7 @@ const Accordion = ({ chapterTitle }) => {
           {/* Module 2 */}
           <button
             className={`w-full flex justify-between items-center text-gray-700 px-4 py-2 text-left font-semibold ${
-              openModules["module2"] ? "text-yellow-400" : ""
+              openModules["module2"] && "text-yellow-400" 
             } rounded-md`}
             onClick={() => toggleModule("module2")}
           >
@@ -73,7 +73,7 @@ const Accordion = ({ chapterTitle }) => {
             </span>
             <ChevronRight
               className={`w-5 h-5 transition-transform ${
-                openModules["module2"] ? "rotate-90" : ""
+                openModules["module2"] && "rotate-90" 
               }`}
             />
           </button>
@@ -81,7 +81,7 @@ const Accordion = ({ chapterTitle }) => {
           {/* Module 3 */}
           <button
             className={`w-full flex justify-between items-center text-gray-700 px-4 py-2 text-left font-semibold ${
-              openModules["module3"] ? "text-yellow-400" : ""
+              openModules["module3"] && "text-yellow-400" 
             } rounded-md`}
             onClick={() => toggleModule("module3")}
           >
@@ -90,14 +90,14 @@ const Accordion = ({ chapterTitle }) => {
             </span>
             <ChevronRight
               className={`w-5 h-5 transition-transform ${
-                openModules["module3"] ? "rotate-90" : ""
+                openModules["module3"] && "rotate-90" 
               }`}
             />
           </button>
 
           <button
             className={`w-full flex justify-between items-center text-gray-700 px-4 py-2 text-left font-semibold ${
-              openModules["module4"] ? "text-yellow-400" : ""
+              openModules["module4"] && "text-yellow-400" 
             } rounded-md`}
             onClick={() => toggleModule("module4")}
           >
@@ -106,7 +106,7 @@ const Accordion = ({ chapterTitle }) => {
             </span>
             <ChevronRight
               className={`w-5 h-5 transition-transform ${
-                openModules["module4"] ? "rotate-90" : ""
+                openModules["module4"] && "rotate-90" 
               }`}
             />
           </button>

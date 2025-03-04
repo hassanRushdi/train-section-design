@@ -5,7 +5,7 @@ import CourseCard from "./CourseCard";
 
 const HeroSection = () => {
   return (
-    <div className="">
+    <div>
       <div
         className="relative w-full h-[360px] bg-cover bg-bottom flex px-6 pt-7 sm:px-2 lg:px-10 "
         style={{ backgroundImage: `url('${GradientBackground}')` }}
